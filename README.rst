@@ -1,5 +1,5 @@
-.. image:: https://travis-ci.org/CraigJPerry/canbus-explorer.png?branch=master
-   :target: https://travis-ci.org/CraigJPerry/canbus-explorer
+.. image:: https://travis-ci.org/CraigJPerry/canbus_explorer.png?branch=master
+   :target: https://travis-ci.org/CraigJPerry/canbus_explorer
 
 Canbus Explorer
 ===============
