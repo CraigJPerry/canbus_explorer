@@ -27,6 +27,7 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
+   developer-setup
 
 
 Indices and tables
