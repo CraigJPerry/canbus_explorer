@@ -4,7 +4,7 @@
 
 import unittest
 from canbus_explorer import runner
-from canbus_explorer.runner import ArgumentParsingError
+from canbus_explorer.args import ArgumentParsingError
 
 
 class LaunchApplication(unittest.TestCase):

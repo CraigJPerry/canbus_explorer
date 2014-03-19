@@ -4,19 +4,9 @@
 
 """Application launcher."""
 
-import sys
 import argparse
 import canbus_explorer
-
-
-class ArgumentParsingError(Exception):
-    pass
-
-
-class ExceptionRaisingArgumentParser(argparse.ArgumentParser):
-
-    def error(self, message):
-        raise ArgumentParsingError(message)
+from canbus_explorer.args import ExceptionRaisingArgumentParser
 
 
 def parse_arguments():
