@@ -2,8 +2,10 @@
 # encoding: utf-8
 
 
+import sys
 import unittest
 import argparse
+from tests.helpers import DevNull
 from canbus_explorer.args import ExceptionRaisingArgumentParser, ArgumentParsingError
 
 
@@ -13,7 +15,12 @@ class ValidateExceptionRaising(unittest.TestCase):
     terminates the runtime)."""
 
     def setUp(self):
+        self._stderr = sys.stderr
+        sys.stderr = DevNull()
         self.argparser = ExceptionRaisingArgumentParser()
+
+    def tearDown(self):
+        sys.stderr = self._stderr
 
     def test_can_create_arg_parser(self):
         self.assertIsInstance(self.argparser, argparse.ArgumentParser)
