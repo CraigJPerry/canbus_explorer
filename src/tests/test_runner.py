@@ -5,7 +5,7 @@
 import sys
 import unittest
 from tests.helpers import DevNull
-from canbus_explorer import runner
+from canbus_explorer import runner, __version__
 from canbus_explorer.args import ArgumentParsingError
 
 
@@ -20,7 +20,12 @@ class LaunchApplication(unittest.TestCase):
         sys.stderr = self._stderr
 
     def test_can_invoke_application(self):
-        self.assertRaises(ArgumentParsingError, runner.main)
+        runner.main(["canbus_explorer"])
+        self.assertEqual("", "".join(sys.stderr.chunks))
+
+    def test_can_view_version_number_via_the_appropriate_cmdline_argument(self):
+        self.assertRaises(SystemExit, runner.main, ["canbus_explorer", "-v"])
+        self.assertIn(__version__, "".join(sys.stderr.chunks))
 
 
 if __name__ == "__main__":

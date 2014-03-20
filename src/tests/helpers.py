@@ -8,6 +8,9 @@
 class DevNull(object):
     """A cross platform equiv of writing to /dev/null."""
 
+    def __init__(self):
+        self.chunks = []
+
     def write(self, data):
-        pass
+        self.chunks.append(data)
 
