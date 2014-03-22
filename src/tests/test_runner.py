@@ -6,7 +6,6 @@ import sys
 import unittest
 from tests.helpers import DevNull
 from canbus_explorer import runner, __version__
-from canbus_explorer.args import ArgumentParsingError
 
 
 class LaunchApplication(unittest.TestCase):
