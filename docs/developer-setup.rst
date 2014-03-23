@@ -28,3 +28,14 @@ a Python class containing the UI elements::
 
 This UI is then loaded in ``src/canbus_explorer/gui.py``.
 
+
+RPM Package Building
+====================
+
+Ensure the ``rpm-build`` package is installed, then run::
+
+    [user@host ~]$ python setup.py bdist_rpm --fix-python
+
+This will generate an RPM package with the details from setup.py and the
+dependencies specified in ``setup.cfg``.
+
