@@ -2,8 +2,9 @@
 # encoding: utf-8
 
 
-from PySide import QtCore, QtGui
-from canbus_explorer.main_window import Ui_MainWindow
+from PySide import QtGui
+
+from canbus_explorer.autogen.main_window import Ui_MainWindow
 
 
 class MyApplication(QtGui.QMainWindow, Ui_MainWindow):
