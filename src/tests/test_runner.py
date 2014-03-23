@@ -20,11 +20,11 @@ class LaunchApplication(unittest.TestCase):
 
     def test_can_invoke_application(self):
         runner.main(["canbus_explorer"])
-        self.assertEqual("", "".join(sys.stderr.chunks))
+        self.assertEqual("", sys.stderr.chunks)
 
     def test_can_view_version_number_via_the_appropriate_cmdline_argument(self):
         self.assertRaises(SystemExit, runner.main, ["canbus_explorer", "-v"])
-        self.assertIn(__version__, "".join(sys.stderr.chunks))
+        self.assertIn(__version__, sys.stderr.chunks)
 
 
 if __name__ == "__main__":

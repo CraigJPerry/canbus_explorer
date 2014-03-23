@@ -9,8 +9,12 @@ class DevNull(object):
     """A cross platform equiv of writing to /dev/null."""
 
     def __init__(self):
-        self.chunks = []
+        self._chunks = []
 
     def write(self, data):
-        self.chunks.append(data)
+        self._chunks.append(data)
+
+    @property
+    def chunks(self):
+        return "".join(self._chunks)
 
