@@ -18,6 +18,7 @@ class LaunchApplication(unittest.TestCase):
     def tearDown(self):
         sys.stderr = self._stderr
 
+    @unittest.skip("Not ready yet, will hang test runs")
     def test_can_invoke_application(self):
         runner.main(["canbus_explorer"])
         self.assertEqual("", sys.stderr.chunks)

@@ -7,10 +7,13 @@
 import sys
 import argparse
 import canbus_explorer
+from canbus_explorer.gui import launch_gui_mainloop
 from canbus_explorer.args import ExceptionRaisingArgumentParser
 
 
 def parse_arguments(argv):
+    """Consume known command line arguments."""
+
     parser = ExceptionRaisingArgumentParser(
         prog="canbus_explorer",
         description=canbus_explorer.__doc__,
@@ -23,15 +26,19 @@ def parse_arguments(argv):
         help="Print the Canbus Explorer version and exit."
     )
 
-    return parser.parse_args(argv[1:])
+    parsed_args, remaining_argv = parser.parse_known_args(argv)
+    return parsed_args, remaining_argv
 
 
 def main(argv=None):
+    """Application entry point."""
     if argv is None:
         argv = sys.argv
-    args = parse_arguments(argv)
+
+    parsed_args, remaining_argv = parse_arguments(argv)
+    return launch_gui_mainloop(remaining_argv)
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())
 
