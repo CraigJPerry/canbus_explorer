@@ -2,3 +2,5 @@
 *.egg-info
 docs/_build
 .idea
+build
+dist

@@ -1,0 +1,3 @@
+include README.rst dev-requirements.txt
+recursive-include src/resources *
+
