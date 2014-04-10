@@ -4,7 +4,7 @@
 
 import unittest
 from pkg_resources import resource_filename
-from canbus_explorer.adapter import ReplayAdapter
+from canbus_explorer.adapter import ReplayAdapter, CanbusAdapter
 
 
 REPLAY_FIXTURE = resource_filename("canbus_explorer", "canbus-demo.log")
@@ -17,7 +17,7 @@ class ReplayAdapterTests(unittest.TestCase):
         self.adapter = ReplayAdapter(REPLAY_FIXTURE)
 
     def test_can_instantiate_replay_adapter(self):
-        self.assertIsInstance(self.adapter, ReplayAdapter)
+        self.assertIsInstance(self.adapter, CanbusAdapter)
 
 
 if __name__ == "__main__":
